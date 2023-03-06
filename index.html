@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: hsl(217, 54%, 11%);
+      }
+
+      .container .box {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        background: hsl(216, 50%, 16%);
+        width: 350px;
+        height: 600px;
+        border-radius: 20px;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+      }
+
+      #main-img {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 8px;
+        margin: auto;
+        top: 20px;
+        left: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .text {
+        position: relative;
+        top: 52%;
+        left: 25px;
+        margin-top: 30px;
+        padding-bottom: 15px;
+        text-align: left;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Outfit";
+        color: hsl(0, 0%, 100%);
+        padding-bottom: 15px;
+        display: inline-block;
+      }
+
+      h1:hover {
+        color: aqua;
+        cursor: pointer;
+      }
+
+      p {
+        position: relative;
+        text-align: left;
+        font-size: 18px;
+        font-family: "Outfit";
+        font-weight: 300;
+        color: hsl(220, 15%, 55%);
+        display: flex;
+        padding-right: 10px;
+        display: inline-block;
+      }
+
+      .ethereum {
+        position: absolute;
+        top: 75%;
+        left: 25px;
+        text-align: left;
+        margin-top: 10px;
+        padding-bottom: 15px;
+        font-family: "Outfit";
+      }
+
+      .ethereum h2 {
+        color: hsl(178, 100%, 50%);
+        display: inline;
+        margin: 0 0 0 5px;
+        font-size: 16px;
+      }
+
+      #icons {
+        margin-bottom: -3px;
+      }
+
+      .clock {
+        display: inline;
+        margin-left: 100px;
+        margin-right: 20px;
+      }
+      .clock h3 {
+        display: inline;
+        font-size: 16px;
+        margin: 0 0 0 5px;
+        color: hsl(220, 15%, 55%);
+      }
+
+      hr {
+        position: relative;
+        color: hsl(215, 32%, 27%);
+        background-color: hsl(215, 32%, 27%);
+        height: 0.01em;
+        border-width: 0;
+        border-radius: 1px;
+        top: 60%;
+        margin: 15px 23px;
+      }
+
+      .creator {
+        position: absolute;
+        display: inline;
+        left: 25px;
+        top: 85%;
+        font-family: "Outfit";
+        margin-top: 10px;
+      }
+
+      .creator img {
+        width: 35px;
+        border: 1px solid;
+        border-radius: 40px;
+        border-color: blanchedalmond;
+        margin-top: 10px;
+        margin-bottom: -10px;
+        margin-right: 10px;
+      }
+
+      .creator h4 {
+        display: inline;
+        font-size: 16px;
+        text-align: left;
+        color: hsl(220, 15%, 55%);
+        font-weight: 400;
+      }
+
+      .creator h5 {
+        display: inline;
+        font-size: 16px;
+        text-align: left;
+        color: hsl(0, 0%, 100%);
+        font-weight: 300;
+      }
+
+      h5:hover {
+        color: aqua;
+        cursor: pointer;
+      }
+
+      .overlay {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        margin: auto;
+        top: 20px;
+        left: 25px;
+        background-color: hsl(178, 100%, 50%);
+        border-radius: 8px;
+        opacity: 0;
+      }
+
+      .view {
+        position: absolute;
+        margin: auto;
+        top: 25%;
+        left: 43%;
+        display: none;
+      }
+
+      .overlay:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .overlay:hover + .view {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img
+          src="/images/image-equilibrium.jpg"
+          alt=" Equilibrium"
+          id="main-img"
+          class="image"
+        />
+
+        <div class="overlay"></div>
+
+        <div class="view">
+          <img src="images/icon-view.svg" alt="view icon" />
+        </div>
+
+        <div class="text">
+          <h1>Equilibrium #3429</h1>
+          <p>Our Equilibrium collection promotes balance and calm.</p>
+        </div>
+
+        <div class="ethereum">
+          <img id="icons" src="/images/icon-ethereum.svg" alt=" ethereum" />
+          <h2>0.041 ETH</h2>
+          <div class="clock">
+            <img id="icons" src="/images/icon-clock.svg" alt=" clock" />
+            <h3>3 days left</h3>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="creator">
+          <img src="/images/image-avatar.png" alt="Creator" />
+          <h4>Creation of</h4>
+          <h5>Jules Wyvern</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
